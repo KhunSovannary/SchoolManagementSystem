@@ -1,0 +1,169 @@
+D:\SchoolManagementSystem\bin\Debug\SchoolManagementSystem.exe.config
+D:\SchoolManagementSystem\bin\Debug\SchoolManagementSystem.exe
+D:\SchoolManagementSystem\bin\Debug\SchoolManagementSystem.pdb
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csproj.AssemblyReference.cache
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.StudentRecordForm.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Properties.Resources.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.StudentRegisterForm.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csproj.GenerateResource.cache
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csproj.CoreCompileInputs.cache
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.exe
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.pdb
+D:\SchoolManagementSystem\bin\Debug\runtimes\win-x86\native\e_sqlite3.dll
+D:\SchoolManagementSystem\bin\Debug\runtimes\win-x64\native\e_sqlite3.dll
+D:\SchoolManagementSystem\bin\Debug\runtimes\win-arm\native\e_sqlite3.dll
+D:\SchoolManagementSystem\bin\Debug\SQLite-net.dll
+D:\SchoolManagementSystem\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+D:\SchoolManagementSystem\bin\Debug\SQLitePCLRaw.core.dll
+D:\SchoolManagementSystem\bin\Debug\SQLitePCLRaw.nativelibrary.dll
+D:\SchoolManagementSystem\bin\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll
+D:\SchoolManagementSystem\bin\Debug\System.Buffers.dll
+D:\SchoolManagementSystem\bin\Debug\System.Memory.dll
+D:\SchoolManagementSystem\bin\Debug\System.Numerics.Vectors.dll
+D:\SchoolManagementSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\SchoolManagementSystem\bin\Debug\SQLite-net.xml
+D:\SchoolManagementSystem\bin\Debug\System.Buffers.xml
+D:\SchoolManagementSystem\bin\Debug\System.Memory.xml
+D:\SchoolManagementSystem\bin\Debug\System.Numerics.Vectors.xml
+D:\SchoolManagementSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\SchoolManagementSystem\bin\Debug\EntityFramework.dll
+D:\SchoolManagementSystem\bin\Debug\EntityFramework.SqlServer.dll
+D:\SchoolManagementSystem\bin\Debug\System.Data.SQLite.dll
+D:\SchoolManagementSystem\bin\Debug\System.Data.SQLite.EF6.dll
+D:\SchoolManagementSystem\bin\Debug\System.Data.SQLite.Linq.dll
+D:\SchoolManagementSystem\bin\Debug\EntityFramework.xml
+D:\SchoolManagementSystem\bin\Debug\EntityFramework.SqlServer.xml
+D:\SchoolManagementSystem\bin\Debug\System.Data.SQLite.xml
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.AddNewExpences.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.LoginForm.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.SalaryDetailForm.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.SalaryForm.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.SalaryReportForm.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.UpdateSalaryForm.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.DashBoardForm.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.ExpenseRecordForm.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.Employee.AddNewEmployeeForm.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.Employee.UpdateEmployeeForm.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.RegisterForm.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.Employee.EmployeeDetailsForm.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.AddNewClassForm.resources
+D:\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.ClassDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\runtimes\win-x86\native\e_sqlite3.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\runtimes\win-x64\native\e_sqlite3.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\runtimes\win-arm\native\e_sqlite3.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\SchoolManagementSystem.exe
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\EntityFramework.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\EntityFramework.SqlServer.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\SQLite-net.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\SQLitePCLRaw.core.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\SQLitePCLRaw.nativelibrary.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\System.Buffers.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\System.Data.SQLite.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\System.Data.SQLite.EF6.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\System.Data.SQLite.Linq.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\System.Memory.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\System.Numerics.Vectors.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\EntityFramework.xml
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\EntityFramework.SqlServer.xml
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\SQLite-net.xml
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\System.Buffers.xml
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\System.Data.SQLite.xml
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\System.Memory.xml
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\System.Numerics.Vectors.xml
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.ClassDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.DashBoardForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.LoginForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.RegisterForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.StudentRecordForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Properties.Resources.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csproj.GenerateResource.cache
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csproj.CoreCompileInputs.cache
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.student.StudentAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.ClassAddEditForm.resources
+D:\Lesson\Year 4\OOAD (C#)\SchoolManagementSystem 10.11 new\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csprojAssemblyReference.cache
+D:\Lesson\Year 4\OOAD (C#)\SchoolManagementSystem 10.11 new\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.exe
+D:\Lesson\Year 4\OOAD (C#)\SchoolManagementSystem 10.11 new\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.pdb
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csproj.AssemblyReference.cache
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.auditorium.AuditoriumAddEditForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.auditorium.AuditoriumDetailForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.bus.BusAddEditForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.bus.BusDetailForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.ClassAddEditForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.ClassDetailForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.department.DepartmentAddEditForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.department.DepartmentDetailForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.Employee.AddNewEmployeeForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.DashBoardForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.Employee.EmployeeDetailsForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.Employee.UpdateEmployeeForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.equipment.EquipmentAddEditForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.equipment.EquipmentDetailForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.lab.LabAddEditForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.lab.LabDetailForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.LoginForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.noticeboard.NoticeBoardAddEditForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.noticeboard.NoticeBoardDetailForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.playground.PlaygroundAddEditForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.playground.PlaygroundDetailForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.RegisterForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.student.StudentAddEditForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.StudentRecordForm.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.Properties.Resources.resources
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csproj.GenerateResource.cache
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csproj.CoreCompileInputs.cache
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.exe
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.pdb
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\runtimes\win-x86\native\e_sqlite3.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\runtimes\win-x64\native\e_sqlite3.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\runtimes\win-arm\native\e_sqlite3.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\SchoolManagementSystem.exe.config
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\SchoolManagementSystem.exe
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\SchoolManagementSystem.pdb
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\EntityFramework.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\EntityFramework.SqlServer.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\SQLite-net.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\SQLitePCLRaw.core.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\SQLitePCLRaw.nativelibrary.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\System.Buffers.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\System.Data.SQLite.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\System.Data.SQLite.EF6.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\System.Data.SQLite.Linq.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\System.Memory.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\System.Numerics.Vectors.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\EntityFramework.xml
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\EntityFramework.SqlServer.xml
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\SQLite-net.xml
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\System.Buffers.xml
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\System.Data.SQLite.xml
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\System.Memory.xml
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\System.Numerics.Vectors.xml
+D:\SchoolManagementSystem 11.11 update\SchoolManagementSystem 11.11 update\SchoolManagementSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.department.DepartmentAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.department.DepartmentDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.lab.LabAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.lab.LabDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.ResetPasswordForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.employee.teacher.TeacherAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.employee.teacher.TeacherDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.employee.EmployeeForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.employee.supportstaff.SupportStaffDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.employee.supportstaff.SupportStaffAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.equipment.labequipment.LabEquipmentAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.equipment.labequipment.LabEquipmentDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.equipment.EquipmentForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.equipment.classequipment.ClassEquipmentAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.form.equipment.classequipment.ClassEquipmentDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\School Management.exe.config
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\School Management.exe
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Debug\School Management.pdb
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csproj.CopyComplete
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\School Management.exe
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\School Management.pdb
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Debug\SchoolManagementSystem.csproj.AssemblyReference.cache

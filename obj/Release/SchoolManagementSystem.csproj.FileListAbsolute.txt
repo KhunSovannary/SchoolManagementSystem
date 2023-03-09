@@ -1,0 +1,63 @@
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\runtimes\win-x86\native\e_sqlite3.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\runtimes\win-x64\native\e_sqlite3.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\runtimes\win-arm\native\e_sqlite3.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\School Management.exe.config
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\School Management.exe
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\School Management.pdb
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\EntityFramework.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\EntityFramework.SqlServer.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\SQLite-net.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\SQLitePCLRaw.batteries_v2.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\SQLitePCLRaw.core.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\SQLitePCLRaw.nativelibrary.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\SQLitePCLRaw.provider.dynamic_cdecl.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\System.Buffers.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\System.Data.SQLite.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\System.Data.SQLite.EF6.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\System.Data.SQLite.Linq.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\System.Memory.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\System.Numerics.Vectors.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\EntityFramework.xml
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\EntityFramework.SqlServer.xml
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\SQLite-net.xml
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\System.Buffers.xml
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\System.Data.SQLite.xml
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\System.Memory.xml
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\System.Numerics.Vectors.xml
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.ClassAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.ClassDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.department.DepartmentAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.department.DepartmentDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.DashBoardForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.employee.EmployeeForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.employee.supportstaff.SupportStaffAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.employee.supportstaff.SupportStaffDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.employee.teacher.TeacherAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.employee.teacher.TeacherDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.equipment.classequipment.ClassEquipmentAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.equipment.classequipment.ClassEquipmentDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.equipment.EquipmentForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.equipment.labequipment.LabEquipmentAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.equipment.labequipment.LabEquipmentDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.lab.LabAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.lab.LabDetailForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.LoginForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.RegisterForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.ResetPasswordForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.student.StudentAddEditForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.StudentRecordForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.Properties.Resources.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.csproj.GenerateResource.cache
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.csproj.CoreCompileInputs.cache
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\School Management.exe
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\School Management.pdb
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\System.Data.SqlClient.dll
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\System.Data.SqlClient.xml
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.ServerForm.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.csproj.CopyComplete
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.csproj.AssemblyReference.cache
+D:\IT Y4 assignment\SchoolManagementSystem\bin\Release\dje\School Management.resources.dll
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\SchoolManagementSystem.form.equipment.EquipmentForm.dje.resources
+D:\IT Y4 assignment\SchoolManagementSystem\obj\Release\dje\School Management.resources.dll
