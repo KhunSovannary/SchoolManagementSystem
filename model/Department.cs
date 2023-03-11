@@ -10,7 +10,7 @@ namespace SchoolManagementSystem.model
 {
     class Department
     {
-   static DatabaseConnection dataBaseConnection = DatabaseConnection.uniqueDBConnection;
+   static DatabaseConnection dataBaseConnection = DatabaseConnection.uniqueDatabaseConnection;
         private string department_id, department_name;
         public string DepartmentId {
             get { return department_id; }

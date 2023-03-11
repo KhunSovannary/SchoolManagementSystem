@@ -10,7 +10,7 @@ namespace SchoolManagementSystem.model
 {
     class ClassEquipments: Equipment
     {
-   static DatabaseConnection dataBaseConnection = DatabaseConnection.uniqueDBConnection;
+   static DatabaseConnection DatabaseConnection = DatabaseConnection.uniqueDatabaseConnection;
         private string class_id; private int chairCount, fanCount, lightCount;
         public string ClassId
         {
@@ -52,21 +52,21 @@ namespace SchoolManagementSystem.model
         static public List<ClassEquipments> ReadData()
         {
             List<ClassEquipments> items = new List<ClassEquipments>();
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
             String sql = "SELECT * FROM ClassEquipments";
-            dataBaseConnection.com = new SqlCommand(sql, dataBaseConnection.con);
-            dataBaseConnection.sqlDataReader = dataBaseConnection.com.ExecuteReader();
-            while (dataBaseConnection.sqlDataReader.Read())
+            DatabaseConnection.com = new SqlCommand(sql, DatabaseConnection.con);
+            DatabaseConnection.sqlDataReader = DatabaseConnection.com.ExecuteReader();
+            while (DatabaseConnection.sqlDataReader.Read())
             {
                 ClassEquipments item = new ClassEquipments();
 
-                item.EquipmentId = dataBaseConnection.sqlDataReader[0].ToString();
-                item.Cost = dataBaseConnection.sqlDataReader[1] is DBNull ? 0 : double.Parse(Convert.ToString(dataBaseConnection.sqlDataReader[1]));
-                item.ClassId = (dataBaseConnection.sqlDataReader[2] ?? null).ToString();
-                item.ChairCount = dataBaseConnection.sqlDataReader[3] is DBNull ? 0 : int.Parse(Convert.ToString(dataBaseConnection.sqlDataReader[3]));
-                item.FanCount = dataBaseConnection.sqlDataReader[4] is DBNull ? 0 : int.Parse(Convert.ToString(dataBaseConnection.sqlDataReader[4]));
-                item.LightCount = dataBaseConnection.sqlDataReader[5] is DBNull ? 0 : int.Parse(Convert.ToString(dataBaseConnection.sqlDataReader[5]));
+                item.EquipmentId = DatabaseConnection.sqlDataReader[0].ToString();
+                item.Cost = DatabaseConnection.sqlDataReader[1] is DBNull ? 0 : double.Parse(Convert.ToString(DatabaseConnection.sqlDataReader[1]));
+                item.ClassId = (DatabaseConnection.sqlDataReader[2] ?? null).ToString();
+                item.ChairCount = DatabaseConnection.sqlDataReader[3] is DBNull ? 0 : int.Parse(Convert.ToString(DatabaseConnection.sqlDataReader[3]));
+                item.FanCount = DatabaseConnection.sqlDataReader[4] is DBNull ? 0 : int.Parse(Convert.ToString(DatabaseConnection.sqlDataReader[4]));
+                item.LightCount = DatabaseConnection.sqlDataReader[5] is DBNull ? 0 : int.Parse(Convert.ToString(DatabaseConnection.sqlDataReader[5]));
                 items.Add(item);
 
             }
@@ -74,22 +74,22 @@ namespace SchoolManagementSystem.model
         }
         static public void InsertData(string equipId, double cost, string cId, int cCount, int fCount, int lCount)
         {
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
 
 
             string CommandText = @"INSERT INTO ClassEquipments(EquipmentID, Cost,ClassID,BenchCount,FanCount,LightCount)" + "" +
                "VALUES(@equipID,@cost,@cID,@bCount,@fCount,@lCount); ";
-            dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);
-            dataBaseConnection.com.Parameters.AddWithValue("@equipID", equipId);
-            dataBaseConnection.com.Parameters.AddWithValue("@cost", cost);
-            dataBaseConnection.com.Parameters.AddWithValue("@cID", cId);
-            dataBaseConnection.com.Parameters.AddWithValue("@bCount", cCount);
-            dataBaseConnection.com.Parameters.AddWithValue("@fCount", fCount);
-            dataBaseConnection.com.Parameters.AddWithValue("@lCount", lCount);
+            DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);
+            DatabaseConnection.com.Parameters.AddWithValue("@equipID", equipId);
+            DatabaseConnection.com.Parameters.AddWithValue("@cost", cost);
+            DatabaseConnection.com.Parameters.AddWithValue("@cID", cId);
+            DatabaseConnection.com.Parameters.AddWithValue("@bCount", cCount);
+            DatabaseConnection.com.Parameters.AddWithValue("@fCount", fCount);
+            DatabaseConnection.com.Parameters.AddWithValue("@lCount", lCount);
 
 
-            int i = dataBaseConnection.com.ExecuteNonQuery();
+            int i = DatabaseConnection.com.ExecuteNonQuery();
             if (i == 1)
             {
                 MessageBox.Show("New Lab Equipments is added.");
@@ -98,20 +98,20 @@ namespace SchoolManagementSystem.model
         }
         static public void UpdateData(string equipId, double cost, string cId, int cCount, int fCount, int lCount)
         {
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
 
 
             string CommandText = @"Update ClassEquipments Set  Cost= @cost, ClassID= @cID, BenchCount= @bCount, FanCount= @fCount, LightCount= @lCount Where EquipmentID= @equipID";
-            dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);
-            dataBaseConnection.com.Parameters.AddWithValue("@equipID", equipId);
-            dataBaseConnection.com.Parameters.AddWithValue("@cost", cost);
-            dataBaseConnection.com.Parameters.AddWithValue("@cID", cId);
-            dataBaseConnection.com.Parameters.AddWithValue("@bCount", cCount);
-            dataBaseConnection.com.Parameters.AddWithValue("@fCount", fCount);
-            dataBaseConnection.com.Parameters.AddWithValue("@lCount", lCount);
+            DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);
+            DatabaseConnection.com.Parameters.AddWithValue("@equipID", equipId);
+            DatabaseConnection.com.Parameters.AddWithValue("@cost", cost);
+            DatabaseConnection.com.Parameters.AddWithValue("@cID", cId);
+            DatabaseConnection.com.Parameters.AddWithValue("@bCount", cCount);
+            DatabaseConnection.com.Parameters.AddWithValue("@fCount", fCount);
+            DatabaseConnection.com.Parameters.AddWithValue("@lCount", lCount);
 
-            int i = dataBaseConnection.com.ExecuteNonQuery();
+            int i = DatabaseConnection.com.ExecuteNonQuery();
             if (i == 1)
             {
                 MessageBox.Show("New Class Equipments is updated.");
@@ -122,13 +122,13 @@ namespace SchoolManagementSystem.model
         static public void DeleteData(string id)
         {
 
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
 
             string CommandText = @"Delete from ClassEquipments Where EquipmentID= @id";
-            dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);
-            dataBaseConnection.com.Parameters.AddWithValue("@id", id);
-            int i = dataBaseConnection.com.ExecuteNonQuery();
+            DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);
+            DatabaseConnection.com.Parameters.AddWithValue("@id", id);
+            int i = DatabaseConnection.com.ExecuteNonQuery();
             if (i == 1)
             {
                 MessageBox.Show("Class Equipments is deleted");
@@ -137,23 +137,23 @@ namespace SchoolManagementSystem.model
         static public List<ClassEquipments> SearchData(string id)
         {
             List<ClassEquipments> items = new List<ClassEquipments>();
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
 
             String sql = "SELECT * FROM ClassEquipments Where EquipmentID = @id";
-            dataBaseConnection.com.Parameters.AddWithValue("@id", id);
-            dataBaseConnection.com = new SqlCommand(sql, dataBaseConnection.con);
-            dataBaseConnection.sqlDataReader = dataBaseConnection.com.ExecuteReader();
-            while (dataBaseConnection.sqlDataReader.Read())
+            DatabaseConnection.com.Parameters.AddWithValue("@id", id);
+            DatabaseConnection.com = new SqlCommand(sql, DatabaseConnection.con);
+            DatabaseConnection.sqlDataReader = DatabaseConnection.com.ExecuteReader();
+            while (DatabaseConnection.sqlDataReader.Read())
             {
                 ClassEquipments item = new ClassEquipments();
 
-                item.EquipmentId = dataBaseConnection.sqlDataReader[0].ToString();
-                item.Cost = dataBaseConnection.sqlDataReader[1] is DBNull ? 0 : double.Parse(Convert.ToString(dataBaseConnection.sqlDataReader[1]));
-                item.ClassId = (dataBaseConnection.sqlDataReader[2] ?? null).ToString();
-                item.ChairCount = dataBaseConnection.sqlDataReader[3] is DBNull ? 0 : int.Parse(Convert.ToString(dataBaseConnection.sqlDataReader[3]));
-                item.FanCount = dataBaseConnection.sqlDataReader[4] is DBNull ? 0 : int.Parse(Convert.ToString(dataBaseConnection.sqlDataReader[4]));
-                item.LightCount = dataBaseConnection.sqlDataReader[5] is DBNull ? 0 : int.Parse(Convert.ToString(dataBaseConnection.sqlDataReader[5]));
+                item.EquipmentId = DatabaseConnection.sqlDataReader[0].ToString();
+                item.Cost = DatabaseConnection.sqlDataReader[1] is DBNull ? 0 : double.Parse(Convert.ToString(DatabaseConnection.sqlDataReader[1]));
+                item.ClassId = (DatabaseConnection.sqlDataReader[2] ?? null).ToString();
+                item.ChairCount = DatabaseConnection.sqlDataReader[3] is DBNull ? 0 : int.Parse(Convert.ToString(DatabaseConnection.sqlDataReader[3]));
+                item.FanCount = DatabaseConnection.sqlDataReader[4] is DBNull ? 0 : int.Parse(Convert.ToString(DatabaseConnection.sqlDataReader[4]));
+                item.LightCount = DatabaseConnection.sqlDataReader[5] is DBNull ? 0 : int.Parse(Convert.ToString(DatabaseConnection.sqlDataReader[5]));
                 items.Add(item);
 
             }

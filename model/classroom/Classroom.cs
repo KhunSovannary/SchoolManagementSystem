@@ -10,7 +10,7 @@ namespace SchoolManagementSystem.model
 {
     class Classroom
     {
-   static DatabaseConnection dataBaseConnection = DatabaseConnection.uniqueDBConnection;
+   static DatabaseConnection DatabaseConnection = DatabaseConnection.uniqueDatabaseConnection;
         private string class_id, class_name, teacher_id, equipment_id; 
         private int student_count;
         public string ClassId {
@@ -55,37 +55,37 @@ namespace SchoolManagementSystem.model
 
         static public List<Classroom> ReadData() {
             List<Classroom> classes = new List<Classroom>();
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
             String sql = "SELECT * FROM Classroom";
-            dataBaseConnection.com = new SqlCommand(sql, dataBaseConnection.con);
-            dataBaseConnection.sqlDataReader = dataBaseConnection.com.ExecuteReader();
-            while (dataBaseConnection.sqlDataReader.Read())
+            DatabaseConnection.com = new SqlCommand(sql, DatabaseConnection.con);
+            DatabaseConnection.sqlDataReader = DatabaseConnection.com.ExecuteReader();
+            while (DatabaseConnection.sqlDataReader.Read())
             {
                 Classroom cls = new Classroom();
-                cls.ClassId = dataBaseConnection.sqlDataReader[0].ToString();
-                cls.ClassName = (dataBaseConnection.sqlDataReader[1] ?? null).ToString();            
-                cls.StudentCount = dataBaseConnection.sqlDataReader[2] is DBNull ? 0 : int.Parse(Convert.ToString(dataBaseConnection.sqlDataReader[2]));
-                cls.TeacherId = (dataBaseConnection.sqlDataReader[3] ?? null).ToString();
-                cls.EquipmentId = (dataBaseConnection.sqlDataReader[4] ?? null).ToString();
+                cls.ClassId = DatabaseConnection.sqlDataReader[0].ToString();
+                cls.ClassName = (DatabaseConnection.sqlDataReader[1] ?? null).ToString();            
+                cls.StudentCount = DatabaseConnection.sqlDataReader[2] is DBNull ? 0 : int.Parse(Convert.ToString(DatabaseConnection.sqlDataReader[2]));
+                cls.TeacherId = (DatabaseConnection.sqlDataReader[3] ?? null).ToString();
+                cls.EquipmentId = (DatabaseConnection.sqlDataReader[4] ?? null).ToString();
                 classes.Add(cls);
 
             }
             return classes;
         }
         static public void InsertData(string classId, string className, string tId, string equipId, int StudentCount) {
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
             string CommandText = @"INSERT INTO Classroom(ClassID,ClassName,TeacherID, StudentCount, EquipmentID)" + "" +
                "VALUES(@clsID,@clsName,@eID,@stuCount,@equipID); ";
-            dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);
-            dataBaseConnection.com.Parameters.AddWithValue("@clsID", classId);
-            dataBaseConnection.com.Parameters.AddWithValue("@clsName", className);
-            dataBaseConnection.com.Parameters.AddWithValue("@eID", tId);
-            dataBaseConnection.com.Parameters.AddWithValue("@stuCount", StudentCount);
-            dataBaseConnection.com.Parameters.AddWithValue("@equipID", equipId);
+            DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);
+            DatabaseConnection.com.Parameters.AddWithValue("@clsID", classId);
+            DatabaseConnection.com.Parameters.AddWithValue("@clsName", className);
+            DatabaseConnection.com.Parameters.AddWithValue("@eID", tId);
+            DatabaseConnection.com.Parameters.AddWithValue("@stuCount", StudentCount);
+            DatabaseConnection.com.Parameters.AddWithValue("@equipID", equipId);
 
-            int i = dataBaseConnection.com.ExecuteNonQuery();
+            int i = DatabaseConnection.com.ExecuteNonQuery();
             if (i == 1)
             {
                 MessageBox.Show("New Class is added.");
@@ -94,19 +94,19 @@ namespace SchoolManagementSystem.model
         }
         static public void UpdateData(string classId, string className, string tId, string equipId, int StudentCount)
         {
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
 
 
             string CommandText = @"Update Classroom set ClassName=  @clsName,TeacherID= @tID, StudentCount= @stuCount WHERE ClassID = @clsID";
-            dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);     
-            dataBaseConnection.com.Parameters.AddWithValue("@clsName", className);
-            dataBaseConnection.com.Parameters.AddWithValue("@tID", tId);
-            dataBaseConnection.com.Parameters.AddWithValue("@stuCount", StudentCount);
-            dataBaseConnection.com.Parameters.AddWithValue("@equipID", equipId);
-            dataBaseConnection.com.Parameters.AddWithValue("@clsID", classId);
+            DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);     
+            DatabaseConnection.com.Parameters.AddWithValue("@clsName", className);
+            DatabaseConnection.com.Parameters.AddWithValue("@tID", tId);
+            DatabaseConnection.com.Parameters.AddWithValue("@stuCount", StudentCount);
+            DatabaseConnection.com.Parameters.AddWithValue("@equipID", equipId);
+            DatabaseConnection.com.Parameters.AddWithValue("@clsID", classId);
 
-            int i = dataBaseConnection.com.ExecuteNonQuery();
+            int i = DatabaseConnection.com.ExecuteNonQuery();
             if (i == 1)
             {
                 MessageBox.Show("Class is updated.");
@@ -116,13 +116,13 @@ namespace SchoolManagementSystem.model
         static public void DeleteData(string id) {
 
 
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
 
             string CommandText = @"Delete from Classroom Where ClassID= @id";
-            dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);
-            dataBaseConnection.com.Parameters.AddWithValue("@id", id);
-            int i = dataBaseConnection.com.ExecuteNonQuery();
+            DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);
+            DatabaseConnection.com.Parameters.AddWithValue("@id", id);
+            int i = DatabaseConnection.com.ExecuteNonQuery();
             if (i == 1)
             {
                 MessageBox.Show("Class is deleted");
@@ -132,23 +132,23 @@ namespace SchoolManagementSystem.model
         static public List<Classroom> SearchData(string id)
         {
             List<Classroom> classes = new List<Classroom>();
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
            
             string CommandText = "SELECT* FROM Classroom where ClassID = @id";
-            dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);
-            dataBaseConnection.com.Parameters.AddWithValue("@id", int.Parse(id));
+            DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);
+            DatabaseConnection.com.Parameters.AddWithValue("@id", int.Parse(id));
 
-            dataBaseConnection.sqlDataReader = dataBaseConnection.com.ExecuteReader();
-            while (dataBaseConnection.sqlDataReader.Read())
+            DatabaseConnection.sqlDataReader = DatabaseConnection.com.ExecuteReader();
+            while (DatabaseConnection.sqlDataReader.Read())
             {
                 Classroom cls = new Classroom();
 
-                cls.ClassId = dataBaseConnection.sqlDataReader[0].ToString();
-                cls.ClassName = (dataBaseConnection.sqlDataReader[1] ?? null).ToString();
-                cls.TeacherId = (dataBaseConnection.sqlDataReader[2] ?? null).ToString();
-                cls.StudentCount = dataBaseConnection.sqlDataReader[3] is DBNull ? 0 : int.Parse(Convert.ToString(dataBaseConnection.sqlDataReader[3]));
-                cls.EquipmentId = (dataBaseConnection.sqlDataReader[4] ?? null).ToString();
+                cls.ClassId = DatabaseConnection.sqlDataReader[0].ToString();
+                cls.ClassName = (DatabaseConnection.sqlDataReader[1] ?? null).ToString();
+                cls.TeacherId = (DatabaseConnection.sqlDataReader[2] ?? null).ToString();
+                cls.StudentCount = DatabaseConnection.sqlDataReader[3] is DBNull ? 0 : int.Parse(Convert.ToString(DatabaseConnection.sqlDataReader[3]));
+                cls.EquipmentId = (DatabaseConnection.sqlDataReader[4] ?? null).ToString();
 
                 classes.Add(cls);
 

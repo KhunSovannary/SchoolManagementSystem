@@ -12,6 +12,7 @@ using System.IO;
 using SchoolManagementSystem.model;
 using SchoolManagementSystem.form.student;
 using System.Data.SqlClient;
+using SchoolManagementSystem.controller;
 
 namespace SchoolManagementSystem
 {
@@ -24,13 +25,15 @@ namespace SchoolManagementSystem
 
             
         }
+        static StudentController stuController = new StudentController();
        
          static List<Student> students = new List<Student>();
          static BindingSource bs;
         private void StudentRecordForm_Load(object sender, EventArgs e)
         {
-            students = Student.ReadData();
+            // students = Student.ReadData();
             //ReadData();
+            students= stuController.GetData();
            
             bs= new BindingSource(students, null);
             dgvStudentRecord.DataSource = bs;
@@ -109,7 +112,7 @@ namespace SchoolManagementSystem
                 Student s = new Student();
                 s = (Student)bs.Current;
                 bs.RemoveCurrent();
-                Student.DeleteData(s.Id);
+               stuController.Delete(s.Id);
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -121,7 +124,7 @@ namespace SchoolManagementSystem
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             bs.Clear();
-            bs = new BindingSource(Student.SearchData(searchTxtBox.Text), null);
+            bs = new BindingSource(stuController.GetDataByID(searchTxtBox.Text), null);
             dgvStudentRecord.DataSource = bs;
           
         }

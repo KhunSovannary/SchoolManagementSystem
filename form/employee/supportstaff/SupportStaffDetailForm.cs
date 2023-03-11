@@ -1,4 +1,6 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller;
+using SchoolManagementSystem.model;
+using SchoolManagementSystem.repository.employee;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,9 +21,10 @@ namespace SchoolManagementSystem.form.employee.supportstaff
         }
         static List<SupportStaff> staffs = new List<SupportStaff>();
         static BindingSource bs;
+        SupportStaffController supportStaffController = new SupportStaffController();
         private void SupportStaffDetailForm_Load(object sender, EventArgs e)
         {
-            staffs = SupportStaff.ReadData();
+            staffs = supportStaffController.GetData();
             bs = new BindingSource(staffs, null);
             dgvStaff.DataSource = bs;
 
@@ -90,7 +93,7 @@ namespace SchoolManagementSystem.form.employee.supportstaff
                 SupportStaff t = new SupportStaff();
                 t = (SupportStaff)bs.Current;
                 bs.RemoveCurrent();
-                SupportStaff.DeleteData(t.Id);
+                supportStaffController.Delete(t.Id);
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -102,7 +105,7 @@ namespace SchoolManagementSystem.form.employee.supportstaff
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             bs.Clear();
-            bs = new BindingSource(SupportStaff.SearchData(searchTxtBox.Text), null);
+            bs = new BindingSource(supportStaffController.GetDataByID(searchTxtBox.Text), null);
             dgvStaff.DataSource = bs;
         }
     }

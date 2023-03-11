@@ -10,7 +10,7 @@ namespace SchoolManagementSystem.model
 {
     class Lab
     {
-         static DatabaseConnection dataBaseConnection = DatabaseConnection.uniqueDBConnection;
+         static DatabaseConnection dataBaseConnection = DatabaseConnection.uniqueDatabaseConnection;
         private string lab_id, lab_name, equipment_id;
         public string LabId
         {

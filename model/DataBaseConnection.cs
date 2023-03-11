@@ -26,7 +26,7 @@ namespace SchoolManagementSystem.model
             SqlDependency.Start(conStr);
         }
 
-    public static DatabaseConnection uniqueDBConnection
+    public static DatabaseConnection uniqueDatabaseConnection
         {
             get { return instance; }
         }

@@ -10,7 +10,7 @@ namespace SchoolManagementSystem.model
 {
     class Teacher: Employee
     {
-         static DatabaseConnection dataBaseConnection = DatabaseConnection.uniqueDBConnection;
+         static DatabaseConnection DatabaseConnection = DatabaseConnection.uniqueDatabaseConnection;
         public Teacher()
         {
 
@@ -28,25 +28,25 @@ namespace SchoolManagementSystem.model
         static public List<Teacher> ReadData()
         {
             List<Teacher> ts = new List<Teacher>();
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
             String sql = "SELECT * FROM Teacher";
-            dataBaseConnection.com = new SqlCommand(sql, dataBaseConnection.con);
-            dataBaseConnection.sqlDataReader = dataBaseConnection.com.ExecuteReader();
-            while (dataBaseConnection.sqlDataReader.Read())
+            DatabaseConnection.com = new SqlCommand(sql, DatabaseConnection.con);
+            DatabaseConnection.sqlDataReader = DatabaseConnection.com.ExecuteReader();
+            while (DatabaseConnection.sqlDataReader.Read())
             {
                 Teacher t = new Teacher();
 
-                t.Id = dataBaseConnection.sqlDataReader[0].ToString();
-                t.Name = (dataBaseConnection.sqlDataReader[1] ?? null).ToString();
-                t.Gender = (dataBaseConnection.sqlDataReader[2] ?? null).ToString();
-                t.Dob = (dataBaseConnection.sqlDataReader[3] ?? null).ToString();
-                t.PhoneNumber = (dataBaseConnection.sqlDataReader[4] ?? null).ToString();
-                t.Address = (dataBaseConnection.sqlDataReader[5] ?? null).ToString();
+                t.Id = DatabaseConnection.sqlDataReader[0].ToString();
+                t.Name = (DatabaseConnection.sqlDataReader[1] ?? null).ToString();
+                t.Gender = (DatabaseConnection.sqlDataReader[2] ?? null).ToString();
+                t.Dob = (DatabaseConnection.sqlDataReader[3] ?? null).ToString();
+                t.PhoneNumber = (DatabaseConnection.sqlDataReader[4] ?? null).ToString();
+                t.Address = (DatabaseConnection.sqlDataReader[5] ?? null).ToString();
                
-                t.DepartmentId = (dataBaseConnection.sqlDataReader[6] ?? null).ToString();
-                t.Salary = dataBaseConnection.sqlDataReader[7] is DBNull ? 0 : double.Parse(Convert.ToString(dataBaseConnection.sqlDataReader[7]));
-                t.Photo = (dataBaseConnection.sqlDataReader[8] as Byte[]) ?? null;
+                t.DepartmentId = (DatabaseConnection.sqlDataReader[6] ?? null).ToString();
+                t.Salary = DatabaseConnection.sqlDataReader[7] is DBNull ? 0 : double.Parse(Convert.ToString(DatabaseConnection.sqlDataReader[7]));
+                t.Photo = (DatabaseConnection.sqlDataReader[8] as Byte[]) ?? null;
                 ts.Add(t);
 
             }
@@ -55,23 +55,23 @@ namespace SchoolManagementSystem.model
         static public void InsertData(string tId, string tName, string tDob, string gender,
             string phnnum, string address, double salary, string depId, byte[] pic)
         {
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
 
 
             string CommandText = @"INSERT INTO Teacher(TeacherID,TeacherName,Gender,Dob, PhoneNumber,Address,DepartmentID,Salary,ProfilePicture)" + "" +
                "VALUES(@tID,@tName,@Gender,@DOB, @PhoneNumber, @Address,@depID, @salary,@pic); ";
-            dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);
-            dataBaseConnection.com.Parameters.AddWithValue("@tID", tId);
-            dataBaseConnection.com.Parameters.AddWithValue("@tName", tName);
-            dataBaseConnection.com.Parameters.AddWithValue("@Gender", gender);
-            dataBaseConnection.com.Parameters.AddWithValue("@DOB", tDob);
-            dataBaseConnection.com.Parameters.AddWithValue("@PhoneNumber", phnnum);
-            dataBaseConnection.com.Parameters.AddWithValue("@Address", address);
-            dataBaseConnection.com.Parameters.AddWithValue("@depID", depId);
-            dataBaseConnection.com.Parameters.AddWithValue("@salary", salary);
-            dataBaseConnection.com.Parameters.AddWithValue("@pic", pic);
-            int i = dataBaseConnection.com.ExecuteNonQuery();
+            DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);
+            DatabaseConnection.com.Parameters.AddWithValue("@tID", tId);
+            DatabaseConnection.com.Parameters.AddWithValue("@tName", tName);
+            DatabaseConnection.com.Parameters.AddWithValue("@Gender", gender);
+            DatabaseConnection.com.Parameters.AddWithValue("@DOB", tDob);
+            DatabaseConnection.com.Parameters.AddWithValue("@PhoneNumber", phnnum);
+            DatabaseConnection.com.Parameters.AddWithValue("@Address", address);
+            DatabaseConnection.com.Parameters.AddWithValue("@depID", depId);
+            DatabaseConnection.com.Parameters.AddWithValue("@salary", salary);
+            DatabaseConnection.com.Parameters.AddWithValue("@pic", pic);
+            int i = DatabaseConnection.com.ExecuteNonQuery();
             if (i == 1)
             {
                 MessageBox.Show("New Teacher is added.");
@@ -86,28 +86,28 @@ namespace SchoolManagementSystem.model
 
 
 
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
 
 
             string CommandText = @"update Teacher set TeacherName = @tName, Gender = @Gender, Dob = @DOB, PhoneNumber = @PhoneNumber,  Address = @Address,  DepartmentID = @depID, Salary = @salary, ProfilePicture = @pic " +
                "Where TeacherID= @tID";
-            dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);
+            DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);
 
-            dataBaseConnection.com.Parameters.AddWithValue("@tName", tName);
-            dataBaseConnection.com.Parameters.AddWithValue("@Gender", gender);
-            dataBaseConnection.com.Parameters.AddWithValue("@DOB", tDob);
-            dataBaseConnection.com.Parameters.AddWithValue("@PhoneNumber", phnnum);
-            dataBaseConnection.com.Parameters.AddWithValue("@Address", address);
-            dataBaseConnection.com.Parameters.AddWithValue("@depID", depId);
-            dataBaseConnection.com.Parameters.AddWithValue("@salary", salary);
+            DatabaseConnection.com.Parameters.AddWithValue("@tName", tName);
+            DatabaseConnection.com.Parameters.AddWithValue("@Gender", gender);
+            DatabaseConnection.com.Parameters.AddWithValue("@DOB", tDob);
+            DatabaseConnection.com.Parameters.AddWithValue("@PhoneNumber", phnnum);
+            DatabaseConnection.com.Parameters.AddWithValue("@Address", address);
+            DatabaseConnection.com.Parameters.AddWithValue("@depID", depId);
+            DatabaseConnection.com.Parameters.AddWithValue("@salary", salary);
 
-            dataBaseConnection.com.Parameters.AddWithValue("@pic", pic);
-            dataBaseConnection.com.Parameters.AddWithValue("@tID", tId);
+            DatabaseConnection.com.Parameters.AddWithValue("@pic", pic);
+            DatabaseConnection.com.Parameters.AddWithValue("@tID", tId);
            
 
 
-            int i = dataBaseConnection.com.ExecuteNonQuery();
+            int i = DatabaseConnection.com.ExecuteNonQuery();
             if (i == 1)
             {
                 MessageBox.Show("New Teacher is updated.");
@@ -116,13 +116,13 @@ namespace SchoolManagementSystem.model
         }
         static public void DeleteData(string id)
         {
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
 
             string CommandText = @"Delete from Teacher Where TeacherID= @id";
-            dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);
-            dataBaseConnection.com.Parameters.AddWithValue("@id", id);
-            int i = dataBaseConnection.com.ExecuteNonQuery();
+            DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);
+            DatabaseConnection.com.Parameters.AddWithValue("@id", id);
+            int i = DatabaseConnection.com.ExecuteNonQuery();
             if (i == 1)
             {
                 MessageBox.Show("Teacher is deleted");
@@ -133,28 +133,28 @@ namespace SchoolManagementSystem.model
         {
 
             List<Teacher> ts = new List<Teacher>();
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
             string CommandText = "SELECT* FROM Teacher where TeacherID = @id";
-            dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);
-            dataBaseConnection.com.Parameters.AddWithValue("@id", int.Parse(id));
+            DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);
+            DatabaseConnection.com.Parameters.AddWithValue("@id", int.Parse(id));
 
-            dataBaseConnection.sqlDataReader = dataBaseConnection.com.ExecuteReader();
+            DatabaseConnection.sqlDataReader = DatabaseConnection.com.ExecuteReader();
 
 
-            while (dataBaseConnection.sqlDataReader.Read())
+            while (DatabaseConnection.sqlDataReader.Read())
             {
                 Teacher t = new Teacher();
 
-                t.Id = dataBaseConnection.sqlDataReader[0].ToString();
-                t.Name = (dataBaseConnection.sqlDataReader[1] ?? null).ToString();
-                t.Gender = (dataBaseConnection.sqlDataReader[2] ?? null).ToString();
-                t.Dob = (dataBaseConnection.sqlDataReader[3] ?? null).ToString();
-                t.PhoneNumber = (dataBaseConnection.sqlDataReader[4] ?? null).ToString();
-                t.Address = (dataBaseConnection.sqlDataReader[5] ?? null).ToString();   
-                t.DepartmentId = (dataBaseConnection.sqlDataReader[6] ?? null).ToString();
-                t.Salary = dataBaseConnection.sqlDataReader[7] is DBNull ? 0 : double.Parse(Convert.ToString(dataBaseConnection.sqlDataReader[7]));
-                t.Photo = (dataBaseConnection.sqlDataReader[8] as Byte[]) ?? null;
+                t.Id = DatabaseConnection.sqlDataReader[0].ToString();
+                t.Name = (DatabaseConnection.sqlDataReader[1] ?? null).ToString();
+                t.Gender = (DatabaseConnection.sqlDataReader[2] ?? null).ToString();
+                t.Dob = (DatabaseConnection.sqlDataReader[3] ?? null).ToString();
+                t.PhoneNumber = (DatabaseConnection.sqlDataReader[4] ?? null).ToString();
+                t.Address = (DatabaseConnection.sqlDataReader[5] ?? null).ToString();   
+                t.DepartmentId = (DatabaseConnection.sqlDataReader[6] ?? null).ToString();
+                t.Salary = DatabaseConnection.sqlDataReader[7] is DBNull ? 0 : double.Parse(Convert.ToString(DatabaseConnection.sqlDataReader[7]));
+                t.Photo = (DatabaseConnection.sqlDataReader[8] as Byte[]) ?? null;
                 ts.Add(t);
 
 

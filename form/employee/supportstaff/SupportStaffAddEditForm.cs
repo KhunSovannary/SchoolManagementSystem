@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,7 +47,7 @@ namespace SchoolManagementSystem.form.employee.supportstaff
         private BindingSource b;
         private SupportStaff cur;
         private string id;
-
+        SupportStaffController supportstaffController = new SupportStaffController();
         private void SupportStaffAddEditForm_Load(object sender, EventArgs e)
         {
             this.Text = title;
@@ -116,11 +117,11 @@ namespace SchoolManagementSystem.form.employee.supportstaff
             ssPhoto.DataBindings["Image"].WriteValue();
             
             b.RaiseListChangedEvents = true;
-
+            SupportStaff s = new SupportStaff(ssIDTxtBox.Text, ssNameTxtBox.Text, dobTxtBox.Text, genderTxtBox.Text, phoneNumTxtBox.Text,
+                    addressTxtBox.Text, Double.Parse(SalaryTxtBox.Text), DepartIDTxtBox.Text, jobTitleTxtBox.Text, ssPhoto1);
             if (op == Operation.OP_ADD)
             {
-                model.SupportStaff.InsertData(ssIDTxtBox.Text, ssNameTxtBox.Text, dobTxtBox.Text, genderTxtBox.Text, phoneNumTxtBox.Text,
-                    addressTxtBox.Text, Double.Parse(SalaryTxtBox.Text), DepartIDTxtBox.Text,jobTitleTxtBox.Text,ssPhoto1);
+                supportstaffController.Insert(s);
                 bs.Position = bs.List.Add(cur.Clone());
 
                 //cur.SetData("", "", 0);
@@ -129,8 +130,7 @@ namespace SchoolManagementSystem.form.employee.supportstaff
             }
             else
             {
-                model.SupportStaff.UpdateData(ssIDTxtBox.Text, ssNameTxtBox.Text, dobTxtBox.Text, genderTxtBox.Text, phoneNumTxtBox.Text,
-                    addressTxtBox.Text, Double.Parse(SalaryTxtBox.Text), DepartIDTxtBox.Text, jobTitleTxtBox.Text, ssPhoto1);
+                supportstaffController.Update(s);
                 b.CancelEdit();
                 this.Close();
             }

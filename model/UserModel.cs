@@ -10,7 +10,7 @@ namespace SchoolManagementSystem.model
 {
     class UserModel
     {
-         static DatabaseConnection dataBaseConnection = DatabaseConnection.uniqueDBConnection;
+         static DatabaseConnection DatabaseConnection = DatabaseConnection.uniqueDatabaseConnection;
         private string user_id, user_name, pwd, eml;
         public string userID {
             get { return user_id; }
@@ -43,22 +43,22 @@ namespace SchoolManagementSystem.model
         static public UserModel CheckUser(string user, string pwd)
         {
             UserModel user1 = new UserModel();
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
             string CommandText = "SELECT* FROM UserModel where UserName LIKE  @userNameTextbox AND Password LIKE  @passwordTextbox";
-            dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);
-            dataBaseConnection.com.Parameters.AddWithValue("@userNameTextbox", user);
-            dataBaseConnection.com.Parameters.AddWithValue("@passwordTextbox", pwd);
-            dataBaseConnection.sqlDataReader = dataBaseConnection.com.ExecuteReader();
+            DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);
+            DatabaseConnection.com.Parameters.AddWithValue("@userNameTextbox", user);
+            DatabaseConnection.com.Parameters.AddWithValue("@passwordTextbox", pwd);
+            DatabaseConnection.sqlDataReader = DatabaseConnection.com.ExecuteReader();
 
             
-            while (dataBaseConnection.sqlDataReader.Read())
+            while (DatabaseConnection.sqlDataReader.Read())
             {
 
-                user1.userID = dataBaseConnection.sqlDataReader[0].ToString();
-                user1.userName = (dataBaseConnection.sqlDataReader[1] ?? null).ToString();
-                user1.password = (dataBaseConnection.sqlDataReader[2] ?? null).ToString();
-                user1.email = (dataBaseConnection.sqlDataReader[3] ?? null).ToString();
+                user1.userID = DatabaseConnection.sqlDataReader[0].ToString();
+                user1.userName = (DatabaseConnection.sqlDataReader[1] ?? null).ToString();
+                user1.password = (DatabaseConnection.sqlDataReader[2] ?? null).ToString();
+                user1.email = (DatabaseConnection.sqlDataReader[3] ?? null).ToString();
 
 
 
@@ -71,20 +71,20 @@ namespace SchoolManagementSystem.model
         {
             
 
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
 
 
             string CommandText = @"INSERT INTO UserModel(userID,userName,password,email) VALUES(@ID,@Username,@Password,@Email); ";
-            dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);
-            dataBaseConnection.com.Parameters.AddWithValue("@ID", int.Parse(userID));
-            dataBaseConnection.com.Parameters.AddWithValue("@Username", userName);
-            dataBaseConnection.com.Parameters.AddWithValue("@Password", pwd);
-            dataBaseConnection.com.Parameters.AddWithValue("@Email", email);
+            DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);
+            DatabaseConnection.com.Parameters.AddWithValue("@ID", int.Parse(userID));
+            DatabaseConnection.com.Parameters.AddWithValue("@Username", userName);
+            DatabaseConnection.com.Parameters.AddWithValue("@Password", pwd);
+            DatabaseConnection.com.Parameters.AddWithValue("@Email", email);
             
         
 
-            int i = dataBaseConnection.com.ExecuteNonQuery();
+            int i = DatabaseConnection.com.ExecuteNonQuery();
            
             if (i == 1)
             {
@@ -94,42 +94,42 @@ namespace SchoolManagementSystem.model
         static public void ResetUser(string user,string email, string pwd)
         {
             UserModel user1 = new UserModel();
-            dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
-            dataBaseConnection.con.Open();
+            DatabaseConnection.con = new SqlConnection(DatabaseConnection.conStr);
+            DatabaseConnection.con.Open();
             string CommandText = "SELECT* FROM UserModel where UserName LIKE  @userName AND Email LIKE  @email";
-            dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);
-            dataBaseConnection.com.Parameters.AddWithValue("@userName", user);
-            dataBaseConnection.com.Parameters.AddWithValue("@email", email);
-            dataBaseConnection.sqlDataReader = dataBaseConnection.com.ExecuteReader();
+            DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);
+            DatabaseConnection.com.Parameters.AddWithValue("@userName", user);
+            DatabaseConnection.com.Parameters.AddWithValue("@email", email);
+            DatabaseConnection.sqlDataReader = DatabaseConnection.com.ExecuteReader();
 
 
-            while (dataBaseConnection.sqlDataReader.Read())
+            while (DatabaseConnection.sqlDataReader.Read())
             {
 
-                user1.userID = dataBaseConnection.sqlDataReader[0].ToString();
-                user1.userName = (dataBaseConnection.sqlDataReader[1] ?? null).ToString();
-                user1.password = (dataBaseConnection.sqlDataReader[2] ?? null).ToString();
-                user1.email = (dataBaseConnection.sqlDataReader[3] ?? null).ToString();
+                user1.userID = DatabaseConnection.sqlDataReader[0].ToString();
+                user1.userName = (DatabaseConnection.sqlDataReader[1] ?? null).ToString();
+                user1.password = (DatabaseConnection.sqlDataReader[2] ?? null).ToString();
+                user1.email = (DatabaseConnection.sqlDataReader[3] ?? null).ToString();
 
 
 
 
 
             }
-            dataBaseConnection.sqlDataReader.Close(); // <- too easy to forget
-            dataBaseConnection.sqlDataReader.Dispose(); // <- too easy to forget
+            DatabaseConnection.sqlDataReader.Close(); // <- too easy to forget
+            DatabaseConnection.sqlDataReader.Dispose(); // <- too easy to forget
   
             if (user1.userName == user && user1.email == email)
             {
 
                 
                 CommandText = "UPDATE UserModel set Password = @pwd WHERE UserName LIKE @user and Email LIKE @email";
-                dataBaseConnection.com = new SqlCommand(CommandText, dataBaseConnection.con);
-                dataBaseConnection.com.Parameters.AddWithValue("@pwd", pwd);
-                dataBaseConnection.com.Parameters.AddWithValue("@user", user);
-                dataBaseConnection.com.Parameters.AddWithValue("@email", email);
+                DatabaseConnection.com = new SqlCommand(CommandText, DatabaseConnection.con);
+                DatabaseConnection.com.Parameters.AddWithValue("@pwd", pwd);
+                DatabaseConnection.com.Parameters.AddWithValue("@user", user);
+                DatabaseConnection.com.Parameters.AddWithValue("@email", email);
            
-                int i = dataBaseConnection.com.ExecuteNonQuery();
+                int i = DatabaseConnection.com.ExecuteNonQuery();
                 if (i == 1)
                 {
                     MessageBox.Show("User Password is updated.");

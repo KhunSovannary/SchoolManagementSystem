@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,7 @@ namespace SchoolManagementSystem.form.student
         private BindingSource b;
         private Student cur;
         private string id;
+        StudentController studentController = new StudentController();
         public StudentAddEditForm(string title,Operation op, BindingSource bs)
         {
 
@@ -79,15 +81,11 @@ namespace SchoolManagementSystem.form.student
             stuPhoto1 = stream.ToArray();
             studentPic.DataBindings["Image"].WriteValue();
             b.RaiseListChangedEvents = true;
-
-
-
-
+            Student stu = new Student(stuIDTxtBox.Text, stuNameTxtBox.Text, stugenderTxtBox.Text, studobTxtBox.Text,
+                    stuaddressTxtBox.Text, stupNumTxtBox.Text, stuclassTxtBox.Text, depTxtBox.Text, stuPhoto1);
             if (op == Operation.OP_ADD)
             {
-
-                Student.InsertData(stuIDTxtBox.Text, stuNameTxtBox.Text, stugenderTxtBox.Text, studobTxtBox.Text,
-                    stuaddressTxtBox.Text, stupNumTxtBox.Text, stuclassTxtBox.Text, depTxtBox.Text,stuPhoto1);
+                studentController.Insert(stu);
                 Console.WriteLine(stuPhoto1.ToString());
                 bs.Position = bs.List.Add(cur.Clone());
                 //cur.SetData("", "", 0);
@@ -96,8 +94,7 @@ namespace SchoolManagementSystem.form.student
             }
             else
             {
-                Student.UpdateData(stuIDTxtBox.Text, stuNameTxtBox.Text, stugenderTxtBox.Text, studobTxtBox.Text,
-                    stuaddressTxtBox.Text, stupNumTxtBox.Text, stuclassTxtBox.Text, depTxtBox.Text,stuPhoto1);
+                studentController.Update(stu);
                 b.CancelEdit();
                 this.Close();
             }
