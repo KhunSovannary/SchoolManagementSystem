@@ -8,9 +8,10 @@ using System.Windows.Forms;
 
 namespace SchoolManagementSystem.model
 {
-    class Department
+   public class Department: Employee
     {
-   static DatabaseConnection dataBaseConnection = DatabaseConnection.uniqueDatabaseConnection;
+        private List<Employee> employees = new List<Employee>();
+        static DatabaseConnection dataBaseConnection = DatabaseConnection.uniqueDatabaseConnection;
         private string department_id, department_name;
         public string DepartmentId {
             get { return department_id; }
@@ -40,7 +41,17 @@ namespace SchoolManagementSystem.model
         {
             return new Department(DepartmentId, DepartmentName);
         }
-       static public List<Department> ReadData() {
+        public void add(Employee employee)
+        {
+            employees.Add(employee);
+        }
+
+        public void remove(Employee employee)
+        {
+            employees.Remove(employee);
+        }
+
+        static public List<Department> ReadData() {
             List<Department> deps = new List<Department>();
             dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
             dataBaseConnection.con.Open();
@@ -58,6 +69,7 @@ namespace SchoolManagementSystem.model
             }
             return deps;
         }
+      
         static public void InsertData(string depId, string depName) {
             dataBaseConnection.con = new SqlConnection(dataBaseConnection.conStr);
             dataBaseConnection.con.Open();

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SchoolManagementSystem.model
 {
-    public class Employee:Person
+    public abstract class Employee:Person
     {
         
         protected double salary; protected string department_id;

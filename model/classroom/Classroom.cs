@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolManagementSystem.model.student;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -8,14 +9,15 @@ using System.Windows.Forms;
 
 namespace SchoolManagementSystem.model
 {
-    class Classroom
+    public class Classroom:ISubject
     {
-   static DatabaseConnection DatabaseConnection = DatabaseConnection.uniqueDatabaseConnection;
-        private string class_id, class_name, teacher_id, equipment_id; 
-        private int student_count;
-        public string ClassId {
-            get { return class_id; }
-            set { class_id = value; }
+        private List<Student> _students = new List<Student>();
+        static DatabaseConnection DatabaseConnection = DatabaseConnection.uniqueDatabaseConnection;
+                private string class_id, class_name, teacher_id, equipment_id; 
+                private int student_count;
+                public string ClassId {
+                get { return class_id; }
+                set { class_id = value; }
         }
         public string ClassName {
             get { return class_name; }
@@ -43,6 +45,37 @@ namespace SchoolManagementSystem.model
             teacher_id = empId;
             equipment_id = equipId;
             student_count = StudentCount;
+        }
+        public void Attach(IObserver observer)
+        {
+            _students.Add((Student)observer);
+        }
+
+        public void Detach(IObserver observer)
+        {
+            _students.Remove((Student)observer);
+        }
+
+        public void Notify()
+        {
+            foreach (var student in _students)
+            {
+                student.Update();
+            }
+        }
+
+        public void Enroll(Student student)
+        {
+            Console.WriteLine($"{student.Name}, you have been enrolled in {class_name}");
+            Attach(student);
+            Notify();
+        }
+
+        public void Disenroll(Student student)
+        {
+            Console.WriteLine($"{student.Name}, you have been disenrolled from {class_name}");
+            Detach(student);
+            Notify();
         }
         public string ClassDetails()
         {

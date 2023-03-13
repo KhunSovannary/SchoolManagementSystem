@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystem.model
 {
-   public class Person
+   public abstract class Person
     {
         protected string id, name, dob, gender, phone_number, address; 
         protected byte[] photo;

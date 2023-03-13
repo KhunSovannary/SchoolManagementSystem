@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolManagementSystem.controller
+namespace SchoolManagementSystem.controller.employee
 {
     public class SupportStaffController: Controller<SupportStaff>
     {

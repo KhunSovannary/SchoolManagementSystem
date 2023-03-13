@@ -13,6 +13,7 @@ using SchoolManagementSystem.model;
 using SchoolManagementSystem.form.student;
 using System.Data.SqlClient;
 using SchoolManagementSystem.controller;
+using SchoolManagementSystem.model.student;
 
 namespace SchoolManagementSystem
 {
@@ -31,14 +32,12 @@ namespace SchoolManagementSystem
          static BindingSource bs;
         private void StudentRecordForm_Load(object sender, EventArgs e)
         {
-            // students = Student.ReadData();
-            //ReadData();
             students= stuController.GetData();
-           
             bs= new BindingSource(students, null);
             dgvStudentRecord.DataSource = bs;
+            dgvStudentRecord.AutoGenerateColumns = false;
             LoadColumn();
-            
+            MessageBox.Show(dgvStudentRecord.Columns.ToString());
         }
          private void LoadColumn()
         {
@@ -60,22 +59,34 @@ namespace SchoolManagementSystem
             var colClass = dgvStudentRecord.Columns["ClassId"];
             colClass.DisplayIndex = 5; colClass.HeaderText = "Class ID";
 
+            var colYear = dgvStudentRecord.Columns["Year"];
+            colYear.DisplayIndex = 6; colYear.HeaderText = "Year";
+
+          var colSD = dgvStudentRecord.Columns["StartDate"];
+            colSD.DisplayIndex = 7; colSD.HeaderText = "Start Date";
+
+            var colGD = dgvStudentRecord.Columns["GraduateDate"];
+            colGD.DisplayIndex = 8; colGD.HeaderText = "Graduate Date";
+
+            var colDP = dgvStudentRecord.Columns["DropPeriod"];
+            colDP.DisplayIndex =9 ; colDP.HeaderText = "Drop Period";
+        
             var colAddress = dgvStudentRecord.Columns["Address"];
-            colAddress.DisplayIndex = 6; colAddress.HeaderText = "Address";
+            colAddress.DisplayIndex = 10; colAddress.HeaderText = "Address";
 
-            var colSection = dgvStudentRecord.Columns["DepartmentId"];
-            colSection.DisplayIndex = 7; colSection.HeaderText = "Department ID";
-
+             var colSection = dgvStudentRecord.Columns["DepartmentId"];
+            colSection.DisplayIndex = 11; colSection.HeaderText = "Department ID";
 
             var colPhoto = (DataGridViewImageColumn)dgvStudentRecord.Columns["Photo"];
             colPhoto.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            colPhoto.DisplayIndex = 8; colPhoto.HeaderText = "Photo";
+            colPhoto.DisplayIndex =12 ; colPhoto.HeaderText = "Photo";
             dgvStudentRecord.RowTemplate.Height = 50;
             colPhoto.DefaultCellStyle.NullValue = null;
 
             dgvStudentRecord.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvStudentRecord.AllowUserToAddRows = false;
             dgvStudentRecord.ReadOnly = true;
+
             bs.ResetBindings(true);
 
         }
@@ -86,10 +97,6 @@ namespace SchoolManagementSystem
 
              StudentAddEditForm frmAdd = new StudentAddEditForm("Adding Students Form", StudentAddEditForm.Operation.OP_ADD,bs);
              frmAdd.ShowDialog(this);
-
-
-
-
          }
          private void updateStudent_Click(object sender, EventArgs e)
          {

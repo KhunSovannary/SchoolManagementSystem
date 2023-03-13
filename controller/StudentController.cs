@@ -1,4 +1,4 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.model.student;
 using SchoolManagementSystem.repository;
 using System;
 using System.Collections.Generic;

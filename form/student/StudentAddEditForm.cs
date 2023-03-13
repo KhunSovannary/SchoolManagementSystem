@@ -1,5 +1,5 @@
 ﻿using SchoolManagementSystem.controller;
-using SchoolManagementSystem.model;
+using SchoolManagementSystem.model.student;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,6 +69,10 @@ namespace SchoolManagementSystem.form.student
             stupNumTxtBox.DataBindings["Text"].WriteValue();
             stuaddressTxtBox.DataBindings["Text"].WriteValue();
             depTxtBox.DataBindings["Text"].WriteValue();
+            yearTxtBox.DataBindings["Text"].WriteValue();
+            startDateTxtBox.DataBindings["Text"].WriteValue();
+            endDateTxtBox.DataBindings["Text"].WriteValue();
+            dropDateTxtBox.DataBindings["Text"].WriteValue();
             MemoryStream stream = new MemoryStream();
             byte[] stuPhoto1;
             if (studentPic.Image == null)
@@ -82,7 +86,8 @@ namespace SchoolManagementSystem.form.student
             studentPic.DataBindings["Image"].WriteValue();
             b.RaiseListChangedEvents = true;
             Student stu = new Student(stuIDTxtBox.Text, stuNameTxtBox.Text, stugenderTxtBox.Text, studobTxtBox.Text,
-                    stuaddressTxtBox.Text, stupNumTxtBox.Text, stuclassTxtBox.Text, depTxtBox.Text, stuPhoto1);
+                    stuaddressTxtBox.Text, stupNumTxtBox.Text, stuclassTxtBox.Text, depTxtBox.Text,yearTxtBox.Text
+                    ,startDateTxtBox.Text, endDateTxtBox.Text, dropDateTxtBox.Text,stuPhoto1);
             if (op == Operation.OP_ADD)
             {
                 studentController.Insert(stu);
@@ -110,7 +115,7 @@ namespace SchoolManagementSystem.form.student
         {
             this.Text = title;
 
-            cur = new Student("", "", "", "", "", "", "", "",null);
+            cur = new Student("", "", "", "", "", "", "", "","","","","",null);
             if (op == Operation.OP_EDIT)
             {
                 cur = (Student)bs.Current;
@@ -126,6 +131,10 @@ namespace SchoolManagementSystem.form.student
             stupNumTxtBox.DataBindings.Add("Text", b, "PhoneNumber").DataSourceUpdateMode = DataSourceUpdateMode.Never;
             stuaddressTxtBox.DataBindings.Add("Text", b, "Address").DataSourceUpdateMode = DataSourceUpdateMode.Never;
             depTxtBox.DataBindings.Add("Text", b, "DepartmentId").DataSourceUpdateMode = DataSourceUpdateMode.Never;
+            yearTxtBox.DataBindings.Add("Text", b, "Year").DataSourceUpdateMode = DataSourceUpdateMode.Never;
+            startDateTxtBox.DataBindings.Add("Text", b, "StartDate").DataSourceUpdateMode = DataSourceUpdateMode.Never;
+            endDateTxtBox.DataBindings.Add("Text", b, "GraduateDate").DataSourceUpdateMode = DataSourceUpdateMode.Never;
+            dropDateTxtBox.DataBindings.Add("Text", b, "DropPeriod").DataSourceUpdateMode = DataSourceUpdateMode.Never;
             studentPic.DataBindings.Add("Image", b, "Photo", true).DataSourceUpdateMode = DataSourceUpdateMode.Never;
 
             b.ResetBindings(false);
@@ -138,7 +147,12 @@ namespace SchoolManagementSystem.form.student
             stupNumTxtBox.KeyPress += ValidateKeyPress;
             stuaddressTxtBox.KeyPress += ValidateKeyPress;
             depTxtBox.KeyPress += ValidateKeyPress;
-            
+            yearTxtBox.KeyPress += ValidateKeyPress;
+            startDateTxtBox.KeyPress += ValidateKeyPress;
+            endDateTxtBox.KeyPress += ValidateKeyPress;
+            dropDateTxtBox.KeyPress += ValidateKeyPress;
+
+
         }
 
         private void addPhotoBtn_Click(object sender, EventArgs e)
@@ -162,6 +176,11 @@ namespace SchoolManagementSystem.form.student
             stupNumTxtBox.Text = "";
             stuaddressTxtBox.Text = "";
             depTxtBox.Text = "";
+            yearTxtBox.Text = "";
+            startDateTxtBox.Text = "";
+            endDateTxtBox.Text = "";
+            dropDateTxtBox.Text = "";
+
             studentPic.Image = null;
         }
     }

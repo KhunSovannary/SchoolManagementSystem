@@ -101,6 +101,8 @@
   <ItemGroup>
     <Compile Include="controller\Controller.cs" />
     <Compile Include="controller\SupportStaffController.cs" />
+    <Compile Include="model\Observer.cs" />
+    <Compile Include="model\student\IStudentState.cs" />
     <Compile Include="repository\employee\SupportStaffRepository.cs" />
     <Compile Include="repository\employee\TeacherRepository.cs" />
     <Compile Include="repository\Repository.cs" />
@@ -241,21 +243,21 @@
     <Compile Include="model\classroom\Classroom.cs" />
     <Compile Include="model\DataBaseConnection.cs" />
     <Compile Include="model\Department.cs" />
-    <Compile Include="model\empolyee\Employee.cs" />
+    <Compile Include="model\employee\Employee.cs" />
     <Compile Include="model\Equipment.cs" />
     <Compile Include="model\lab\Lab.cs" />
     <Compile Include="model\lab\LabEquipments.cs" />
     <Compile Include="model\Person.cs" />
     <Compile Include="model\SchoolManagement.cs" />
-    <Compile Include="model\Student.cs" />
+    <Compile Include="model\student\Student.cs" />
     <Compile Include="form\student\StudentRecordForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\student\StudentRecordForm.Designer.cs">
       <DependentUpon>StudentRecordForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="model\empolyee\SupportStaff.cs" />
-    <Compile Include="model\empolyee\Teacher.cs" />
+    <Compile Include="model\employee\SupportStaff.cs" />
+    <Compile Include="model\employee\Teacher.cs" />
     <Compile Include="model\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

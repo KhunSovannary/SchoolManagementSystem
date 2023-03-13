@@ -1,5 +1,5 @@
 ﻿using SchoolManagementSystem.repository;
-using SchoolManagementSystem.model;
+using SchoolManagementSystem.model.student;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -33,6 +33,11 @@ namespace SchoolManagementSystem.repository
                 stu.ClassId = (dbCon.sqlDataReader[6] ?? null).ToString();
                 stu.DepartmentId = (dbCon.sqlDataReader[7] ?? null).ToString();
                 stu.Photo = (dbCon.sqlDataReader[8] as Byte[]) ?? null;
+                stu.Year = (dbCon.sqlDataReader[9] ?? null).ToString();
+                stu.StartDate = (dbCon.sqlDataReader[10] ?? null).ToString();
+                stu.GraduateDate = (dbCon.sqlDataReader[11] ?? null).ToString();
+                stu.DropPeriod = (dbCon.sqlDataReader[12] ?? null).ToString();
+            
                 students.Add(stu);
 
             }
@@ -42,8 +47,8 @@ namespace SchoolManagementSystem.repository
          public override void Create(Student s)
         {   dbCon.con = new SqlConnection(dbCon.conStr);
              dbCon.con.Open();
-            string CommandText = @"INSERT INTO Student(StudentID,StudentName,Gender,Dob, PhoneNumber,Address,ClassId,DepartmentId,ProfilePicture)" +
-               "VALUES(@ID,@Name,@Gender,@DOB,@PhoneNumber,@Address,@Class,@depID,@pic); ";
+            string CommandText = @"INSERT INTO Student(StudentID,StudentName,Gender,Dob, PhoneNumber,Address,ClassId,DepartmentId, Year, StartDate, GraduateDate, DropPeriod, ProfilePicture)" +
+               "VALUES(@ID,@Name,@Gender,@DOB,@PhoneNumber,@Address,@Class,@depID, @y, @sD, @eD, @dP, @pic); ";
             dbCon.com = new SqlCommand(CommandText, dbCon.con);
             dbCon.com.Parameters.AddWithValue("@ID", s.Id);
             dbCon.com.Parameters.AddWithValue("@Name", s.Name);
@@ -53,6 +58,10 @@ namespace SchoolManagementSystem.repository
             dbCon.com.Parameters.AddWithValue("@Address",s.Address);
             dbCon.com.Parameters.AddWithValue("@Class", s.ClassId);
             dbCon.com.Parameters.AddWithValue("@depID",s.DepartmentId);
+            dbCon.com.Parameters.AddWithValue("@y", s.Year);
+            dbCon.com.Parameters.AddWithValue("@sD", s.StartDate);
+            dbCon.com.Parameters.AddWithValue("@eD", s.GraduateDate);
+            dbCon.com.Parameters.AddWithValue("@dP", s.DropPeriod);
             dbCon.com.Parameters.AddWithValue("@pic",s.Photo );
             int i = dbCon.com.ExecuteNonQuery();
             if (i == 1)
@@ -65,7 +74,7 @@ namespace SchoolManagementSystem.repository
             dbCon.con = new SqlConnection(dbCon.conStr);
             dbCon.con.Open();
 
-            string CommandText = @"update Student set StudentName = @Name, Gender = @Gender, Dob = @DOB, PhoneNumber = @PhoneNumber,  Address = @Address, ClassId = @Class, DepartmentID = @depID, ProfilePicture = @pic " +
+            string CommandText = @"update Student set StudentName = @Name, Gender = @Gender, Dob = @DOB, PhoneNumber = @PhoneNumber,  Address = @Address, ClassId = @Class, DepartmentID = @depID, Year = @y, StartDate = @sD, GraduateDate = @eD, DropPeriod = @dP,ProfilePicture = @pic " +
             "Where StudentID= @id";
             dbCon.com = new SqlCommand(CommandText, dbCon.con);
 
@@ -76,6 +85,10 @@ namespace SchoolManagementSystem.repository
             dbCon.com.Parameters.AddWithValue("@Address", s.Address);
             dbCon.com.Parameters.AddWithValue("@Class", s.ClassId);
             dbCon.com.Parameters.AddWithValue("@depID",s.DepartmentId);
+            dbCon.com.Parameters.AddWithValue("@y", s.Year);
+            dbCon.com.Parameters.AddWithValue("@sD", s.StartDate);
+            dbCon.com.Parameters.AddWithValue("@eD", s.GraduateDate);
+            dbCon.com.Parameters.AddWithValue("@dP", s.DropPeriod);
             dbCon.com.Parameters.AddWithValue("@id",s.Id );
             dbCon.com.Parameters.AddWithValue("@pic", s.Photo);
             int i = dbCon.com.ExecuteNonQuery();
