@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller.employee;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,9 +36,10 @@ namespace SchoolManagementSystem.form.employee.teacher
         }
         static List<Teacher> teachers = new List<Teacher>();
         static BindingSource bs;
+        TeacherController teacherController = new TeacherController();
         private void TeacherDetailForm_Load(object sender, EventArgs e)
         {
-            teachers = Teacher.ReadData();
+            teachers = teacherController.GetData();
             bs = new BindingSource(teachers, null);
             dgvTeacher.DataSource = bs;
 
@@ -89,7 +91,7 @@ namespace SchoolManagementSystem.form.employee.teacher
                 Teacher t = new Teacher();
                 t = (Teacher)bs.Current;
                 bs.RemoveCurrent();
-                Teacher.DeleteData(t.Id);
+                teacherController.Delete(t.Id);
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -101,7 +103,7 @@ namespace SchoolManagementSystem.form.employee.teacher
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             bs.Clear();
-            bs = new BindingSource(Teacher.SearchData(searchTxtBox.Text), null);
+            bs = new BindingSource(teacherController.GetDataByID(searchTxtBox.Text), null);
             dgvTeacher.DataSource = bs;
         }
     }

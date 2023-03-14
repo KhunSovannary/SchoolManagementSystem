@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.form.employee.teacher;
+﻿using SchoolManagementSystem.controller.equipment;
+using SchoolManagementSystem.form.employee.teacher;
 using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace SchoolManagementSystem.form.equipment.labequipment
         }
         static List<LabEquipments> labEquipments = new List<LabEquipments>();
         static BindingSource bs;
+        LabEquipmentController labEquipmentController = new LabEquipmentController();
         private void addNewEquipBtn_Click(object sender, EventArgs e)
         {
             LabEquipmentAddEditForm frmAdd = new LabEquipmentAddEditForm("Add Lab Equipment Form", LabEquipmentAddEditForm.Operation.OP_ADD, bs);
@@ -45,7 +47,7 @@ namespace SchoolManagementSystem.form.equipment.labequipment
                 LabEquipments l = new LabEquipments();
                 l = (LabEquipments)bs.Current;
                 bs.RemoveCurrent();
-                LabEquipments.DeleteData(l.EquipmentId);
+                labEquipmentController.Delete(l.EquipmentId);
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -57,7 +59,7 @@ namespace SchoolManagementSystem.form.equipment.labequipment
 
         private void LabEquipmentDetailForm_Load(object sender, EventArgs e)
         {
-            labEquipments = LabEquipments.ReadData();
+            labEquipments = labEquipmentController.GetData();
             bs = new BindingSource(labEquipments, null);
             dgvLabEquipment.DataSource = bs;
 
@@ -86,7 +88,7 @@ namespace SchoolManagementSystem.form.equipment.labequipment
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             bs.Clear();
-            bs = new BindingSource(LabEquipments.SearchData(searchTxtBox.Text), null);
+            bs = new BindingSource(labEquipmentController.GetDataByID(searchTxtBox.Text), null);
             dgvLabEquipment.DataSource = bs;
         }
     }

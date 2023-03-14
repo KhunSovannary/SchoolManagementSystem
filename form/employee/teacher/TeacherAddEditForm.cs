@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller.employee;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +48,7 @@ namespace SchoolManagementSystem.form.employee.teacher
         private BindingSource b;
         private Teacher cur;
         private string id;
+        TeacherController teacherController = new TeacherController();
         private void TeacherAddEditForm_Load(object sender, EventArgs e)
         {
             this.Text = title;
@@ -113,11 +115,11 @@ namespace SchoolManagementSystem.form.employee.teacher
            
 
             b.RaiseListChangedEvents = true;
-
+            Teacher t = new Teacher(TeachIDTxtBox.Text, TeachNameTxtBox.Text, dobTxtBox.Text, genderTxtBox.Text, phoneNumTxtBox.Text,
+                    addressTxtBox.Text, Double.Parse(SalaryTxtBox.Text), DepartIDTxtBox.Text, teachPhoto1);
             if (op == Operation.OP_ADD)
             {
-                model.Teacher.InsertData(TeachIDTxtBox.Text, TeachNameTxtBox.Text, dobTxtBox.Text, genderTxtBox.Text, phoneNumTxtBox.Text,
-                    addressTxtBox.Text, Double.Parse(SalaryTxtBox.Text), DepartIDTxtBox.Text, teachPhoto1);
+                teacherController.Insert(t);
                 bs.Position = bs.List.Add(cur.Clone());
 
                 //cur.SetData("", "", 0);
@@ -126,8 +128,7 @@ namespace SchoolManagementSystem.form.employee.teacher
             }
             else
             {
-                model.Teacher.UpdateData(TeachIDTxtBox.Text, TeachNameTxtBox.Text, dobTxtBox.Text, genderTxtBox.Text, phoneNumTxtBox.Text,
-                    addressTxtBox.Text, Double.Parse(SalaryTxtBox.Text), DepartIDTxtBox.Text, teachPhoto1);
+                teacherController.Update(t);
                 b.CancelEdit();
                 this.Close();
             }

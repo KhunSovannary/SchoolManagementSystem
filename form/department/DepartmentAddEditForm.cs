@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,7 @@ namespace SchoolManagementSystem.form.department
         private BindingSource b;
         private Department cur;
         private string id;
+        DepartmentController departmentController = new DepartmentController();
         public DepartmentAddEditForm(string title, Operation op, BindingSource bs)
         {
 
@@ -85,11 +87,11 @@ namespace SchoolManagementSystem.form.department
             depNameTxtBox.DataBindings["Text"].WriteValue();
            
             b.RaiseListChangedEvents = true;
-
+            Department d = new Department(depIDTxtBox.Text, depNameTxtBox.Text);
             if (op == Operation.OP_ADD)
             {
 
-                model.Department.InsertData(depIDTxtBox.Text,depNameTxtBox.Text);
+                departmentController.Insert(d);
                 bs.Position = bs.List.Add(cur.Clone());
                 //cur.SetData("", "", 0);
                 b.CancelEdit();
@@ -97,7 +99,7 @@ namespace SchoolManagementSystem.form.department
             }
             else
             {
-                model.Department.UpdateData(depIDTxtBox.Text, depNameTxtBox.Text);
+                departmentController.Update(d);
                 b.CancelEdit();
                 this.Close();
             }

@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,7 @@ namespace SchoolManagementSystem.form
             passwordTxtbox.PasswordChar ='*';
         }
 
-
+        AdministratorController administratorController = new AdministratorController();
     
        static DataTable dt;
         private void loginBtn_Click(object sender, EventArgs e)
@@ -31,9 +32,9 @@ namespace SchoolManagementSystem.form
             }
             else
             {
-                UserModel user = new UserModel();
+                Administrator user = new Administrator();
                 
-                user  = UserModel.CheckUser(userNameTxtbox.Text,passwordTxtbox.Text);
+                user  = administratorController.Check(userNameTxtbox.Text,passwordTxtbox.Text);
                 if (userNameTxtbox.Text==user.userName && passwordTxtbox.Text == user.password)
                 {
                     DashBoardForm dashBoardForm = new DashBoardForm();

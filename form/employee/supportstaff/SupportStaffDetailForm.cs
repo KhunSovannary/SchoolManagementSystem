@@ -1,4 +1,5 @@
 ﻿using SchoolManagementSystem.controller;
+using SchoolManagementSystem.controller.employee;
 using SchoolManagementSystem.model;
 using SchoolManagementSystem.repository.employee;
 using System;

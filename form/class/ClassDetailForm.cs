@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,13 +23,13 @@ namespace SchoolManagementSystem
 
         static List<Classroom> classrooms = new List<Classroom>();
         static BindingSource bs;
-       
+        ClassroomController classroomController = new ClassroomController();
 
        
 
         private void ClassDetailForm_Load(object sender, EventArgs e)
         {
-            classrooms = Classroom.ReadData();
+            classrooms = classroomController.GetData();
             bs = new BindingSource(classrooms, null);
             dgvClassroom.DataSource = bs;
 
@@ -80,7 +81,7 @@ namespace SchoolManagementSystem
                 Classroom cls = new Classroom();
                 cls = (Classroom)bs.Current;
                 bs.RemoveCurrent();
-                Classroom.DeleteData(cls.ClassId);
+                classroomController.Delete(cls.ClassId);
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -92,7 +93,7 @@ namespace SchoolManagementSystem
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             bs.Clear();
-            bs = new BindingSource(Classroom.SearchData(searchTxtBox.Text), null);
+            bs = new BindingSource(classroomController.GetDataByID(searchTxtBox.Text), null);
             dgvClassroom.DataSource = bs;
         }
     }

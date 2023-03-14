@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller.equipment;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace SchoolManagementSystem.form.equipment.classequipment
         }
         static List<ClassEquipments> classEquipment = new List<ClassEquipments>();
         static BindingSource bs;
+        ClassEquipmentController classEquipmentController = new ClassEquipmentController();
         private void addNewEquipBtn_Click(object sender, EventArgs e)
         {
 
@@ -46,7 +48,7 @@ namespace SchoolManagementSystem.form.equipment.classequipment
                 ClassEquipments t = new ClassEquipments();
                 t = (ClassEquipments)bs.Current;
                 bs.RemoveCurrent();
-                ClassEquipments.DeleteData(t.EquipmentId);
+                classEquipmentController.Delete(t.EquipmentId);
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -57,7 +59,7 @@ namespace SchoolManagementSystem.form.equipment.classequipment
         private void ClassEquipmentDetailForm_Load(object sender, EventArgs e)
         {
 
-            classEquipment = ClassEquipments.ReadData();
+            classEquipment = classEquipmentController.GetData();
             bs = new BindingSource(classEquipment, null);
             dgvClassEquipment.DataSource = bs;
 
@@ -89,7 +91,7 @@ namespace SchoolManagementSystem.form.equipment.classequipment
         private void SearchBtn_Click(object sender, EventArgs e)
         {
             bs.Clear();
-            bs = new BindingSource(ClassEquipments.SearchData(searchTxtBox.Text), null);
+            bs = new BindingSource(classEquipmentController.GetDataByID(searchTxtBox.Text), null);
             dgvClassEquipment.DataSource = bs;
         }
     }

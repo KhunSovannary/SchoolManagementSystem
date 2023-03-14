@@ -99,12 +99,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controller\AdministratorController.cs" />
+    <Compile Include="controller\ClassroomController.cs" />
+    <Compile Include="controller\equipment\ClassEquipmentController.cs" />
     <Compile Include="controller\Controller.cs" />
-    <Compile Include="controller\SupportStaffController.cs" />
+    <Compile Include="controller\DepartmentController.cs" />
+    <Compile Include="controller\LabController.cs" />
+    <Compile Include="controller\equipment\LabEquipmentController.cs" />
+    <Compile Include="controller\employee\SupportStaffController.cs" />
+    <Compile Include="controller\employee\TeacherController.cs" />
     <Compile Include="model\Observer.cs" />
     <Compile Include="model\student\IStudentState.cs" />
+    <Compile Include="repository\AdministratorRepository.cs" />
+    <Compile Include="repository\ClassroomRepository.cs" />
+    <Compile Include="repository\DepartmentRepository.cs" />
     <Compile Include="repository\employee\SupportStaffRepository.cs" />
     <Compile Include="repository\employee\TeacherRepository.cs" />
+    <Compile Include="repository\equipment\LabEquipmentRepository.cs" />
+    <Compile Include="repository\equipment\ClassEquipmentRepository.cs" />
+    <Compile Include="repository\LabRepository.cs" />
     <Compile Include="repository\Repository.cs" />
     <Compile Include="controller\StudentController.cs" />
     <Compile Include="form\class\ClassAddEditForm.cs">
@@ -258,7 +271,7 @@
     </Compile>
     <Compile Include="model\employee\SupportStaff.cs" />
     <Compile Include="model\employee\Teacher.cs" />
-    <Compile Include="model\UserModel.cs" />
+    <Compile Include="model\Administrator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repository\StudentRepository.cs" />

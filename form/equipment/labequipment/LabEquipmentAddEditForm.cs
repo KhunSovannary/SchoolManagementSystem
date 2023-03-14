@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller.equipment;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,7 @@ namespace SchoolManagementSystem.form.equipment.labequipment
         private BindingSource b;
         private LabEquipments cur;
         private string id;
+        LabEquipmentController labEquipmentController = new LabEquipmentController();
         public LabEquipmentAddEditForm(string title, Operation op, BindingSource bs)
         {
 
@@ -56,11 +58,11 @@ namespace SchoolManagementSystem.form.equipment.labequipment
           
 
             b.RaiseListChangedEvents = true;
-
+            LabEquipments labEquip = new LabEquipments(equIDTxtBox.Text, Double.Parse(costTxtBox.Text), equipNameTxtBox.Text, int.Parse(equipCountTxtBox.Text));
             if (op == Operation.OP_ADD)
             {
 
-                LabEquipments.InsertData(equIDTxtBox.Text, equipNameTxtBox.Text, Double.Parse(costTxtBox.Text), int.Parse(equipCountTxtBox.Text));
+                labEquipmentController.Insert(labEquip);
                 bs.Position = bs.List.Add(cur.Clone());
                 //cur.SetData("", "", 0);
                 b.CancelEdit();
@@ -68,7 +70,7 @@ namespace SchoolManagementSystem.form.equipment.labequipment
             }
             else
             {
-                LabEquipments.UpdateData(equIDTxtBox.Text, Double.Parse(costTxtBox.Text), equipNameTxtBox.Text, int.Parse(equipCountTxtBox.Text));
+                labEquipmentController.Update(labEquip);
                 b.CancelEdit();
                 this.Close();
             }

@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,7 @@ namespace SchoolManagementSystem.form.lab
         private BindingSource b;
         private Lab cur;
         private string id;
+        LabController labController = new LabController();
         public LabAddEditForm(string title, Operation op, BindingSource bs)
         {
 
@@ -83,11 +85,11 @@ namespace SchoolManagementSystem.form.lab
             equIDTxtBox.DataBindings["Text"].WriteValue();
 
             b.RaiseListChangedEvents = true;
-
+            Lab lab = new Lab(labIDTxtBox.Text, labNameTxtBox.Text, equIDTxtBox.Text);
             if (op == Operation.OP_ADD)
             {
-               
-                model.Lab.InsertData(labIDTxtBox.Text, labNameTxtBox.Text, equIDTxtBox.Text);
+
+                labController.Insert(lab);
                 bs.Position = bs.List.Add(cur.Clone());
                 //cur.SetData("", "", 0);
                 b.CancelEdit();
@@ -95,7 +97,7 @@ namespace SchoolManagementSystem.form.lab
             }
             else
             {
-               model.Lab.UpdateData(labIDTxtBox.Text, labNameTxtBox.Text, equIDTxtBox.Text);
+                labController.Update(lab);
                 b.CancelEdit();
                 this.Close();
             }

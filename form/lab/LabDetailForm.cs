@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,9 +22,10 @@ namespace SchoolManagementSystem.form.lab
         
         static List<Lab> labs = new List<Lab>();
         static BindingSource bs;
+        LabController labController = new LabController();
         private void LabDetailForm_Load(object sender, EventArgs e)
         {
-            labs = Lab.ReadData();
+            labs = labController.GetData();
             bs = new BindingSource(labs, null);
             dgvLab.DataSource = bs;
 
@@ -69,7 +71,7 @@ namespace SchoolManagementSystem.form.lab
                 Lab l = new Lab();
                 l = (Lab)bs.Current;
                 bs.RemoveCurrent();
-                Lab.DeleteData(l.LabId);
+                labController.Delete(l.LabId);
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -82,7 +84,7 @@ namespace SchoolManagementSystem.form.lab
         {
 
             bs.Clear();
-            bs = new BindingSource(Lab.SearchData(searchTxtBox.Text), null);
+            bs = new BindingSource(labController.GetDataByID(searchTxtBox.Text), null);
             dgvLab.DataSource = bs;
         }
        

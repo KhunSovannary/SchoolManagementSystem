@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller.equipment;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,7 @@ namespace SchoolManagementSystem.form.equipment.classequipment
                     private Operation op;
                     private BindingSource b;
                     private ClassEquipments cur;
+        ClassEquipmentController classEquipmentController = new ClassEquipmentController();
        
                     public ClassEquipmentAddEditForm(string title, Operation op, BindingSource bs)
                     {
@@ -57,12 +59,13 @@ namespace SchoolManagementSystem.form.equipment.classequipment
            
 
                         b.RaiseListChangedEvents = true;
+                        ClassEquipments clEquip = new ClassEquipments(equIDTxtBox.Text, Double.Parse(costTxtBox.Text), classIDTxtBox.Text, int.Parse(chairCountTxtBox.Text),
+                                int.Parse(fanCountTxtBox.Text), int.Parse(lightCountTxtBox.Text));
 
                         if (op == Operation.OP_ADD)
                         {
 
-                            ClassEquipments.InsertData(equIDTxtBox.Text,Double.Parse(costTxtBox.Text), classIDTxtBox.Text,int.Parse(chairCountTxtBox.Text),
-                                int.Parse(fanCountTxtBox.Text), int.Parse(lightCountTxtBox.Text));
+                            classEquipmentController.Insert(clEquip);
                             bs.Position = bs.List.Add(cur.Clone());
                             //cur.SetData("", "", 0);
                             b.CancelEdit();
@@ -70,9 +73,8 @@ namespace SchoolManagementSystem.form.equipment.classequipment
                         }
                         else
                         {
-                            ClassEquipments.UpdateData(equIDTxtBox.Text, Double.Parse(costTxtBox.Text), classIDTxtBox.Text, int.Parse(chairCountTxtBox.Text),
-                                int.Parse(fanCountTxtBox.Text), int.Parse(lightCountTxtBox.Text));
-                            b.CancelEdit();
+                             classEquipmentController.Update(clEquip);
+                             b.CancelEdit();
                             this.Close();
                         }
                         bs.ResetBindings(false);

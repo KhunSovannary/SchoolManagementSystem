@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,7 @@ namespace SchoolManagementSystem
         private BindingSource b;
         private Classroom cur;
         private string id;
+        ClassroomController classroomController = new ClassroomController();
         public ClassAddEditForm(string title, Operation op, BindingSource bs)
         {
             InitializeComponent();
@@ -95,12 +97,12 @@ namespace SchoolManagementSystem
             equipIDTxtBox.DataBindings["Text"].WriteValue();
 
             b.RaiseListChangedEvents = true;
-
+            Classroom c = new Classroom(classIDTxtBox.Text, classNameTxtBox.Text, teacherIDTxtBox.Text,
+                    equipIDTxtBox.Text, int.Parse(stuCountTxtBox.Text));
             if (op == Operation.OP_ADD)
             {
 
-                model.Classroom.InsertData(classIDTxtBox.Text,classNameTxtBox.Text,teacherIDTxtBox.Text,
-                    equipIDTxtBox.Text,int.Parse(stuCountTxtBox.Text));
+                classroomController.Insert(c);
                 bs.Position = bs.List.Add(cur.Clone());
                 //cur.SetData("", "", 0);
                 b.CancelEdit();
@@ -108,8 +110,7 @@ namespace SchoolManagementSystem
             }
             else
             {
-                model.Classroom.UpdateData(classIDTxtBox.Text, classNameTxtBox.Text, teacherIDTxtBox.Text,
-                    equipIDTxtBox.Text, int.Parse(stuCountTxtBox.Text));
+                classroomController.Update(c);
                 b.CancelEdit();
                 this.Close();
             }

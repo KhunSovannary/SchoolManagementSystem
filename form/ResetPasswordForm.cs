@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,11 +21,11 @@ namespace SchoolManagementSystem.form
             confpasswordTxtbox.PasswordChar = '*';
 
         }
-
+        AdministratorController administratorController = new AdministratorController();
         private void resetBtn_Click(object sender, EventArgs e)
         {
             if(passwordTxtBox.Text == confpasswordTxtbox.Text)
-            UserModel.ResetUser(userNameTxtbox.Text, emailTxtbox.Text, passwordTxtBox.Text);
+            administratorController.Reset(userNameTxtbox.Text, emailTxtbox.Text, passwordTxtBox.Text);
             else
             {
                 MessageBox.Show("Password is not match");

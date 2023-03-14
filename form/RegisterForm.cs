@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.model;
+﻿using SchoolManagementSystem.controller;
+using SchoolManagementSystem.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,7 @@ namespace SchoolManagementSystem.form
             passwordTxtbox.PasswordChar = '*';
             cfpasswordTxtBox.PasswordChar = '*';
         }
-
+        AdministratorController administratorController = new AdministratorController();
         private void RegisterForm_Load(object sender, EventArgs e)
         {
             
@@ -29,8 +30,11 @@ namespace SchoolManagementSystem.form
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            if (passwordTxtbox.Text == cfpasswordTxtBox.Text)
-                UserModel.CreateUser(userIDTxtbox.Text, userNameTxtbox.Text, passwordTxtbox.Text, emailTxtbox.Text);
+            if (passwordTxtbox.Text == cfpasswordTxtBox.Text) { 
+                Administrator admin = new Administrator(userIDTxtbox.Text, userNameTxtbox.Text, passwordTxtbox.Text, emailTxtbox.Text);
+                administratorController.Create(admin); 
+            }
+
             else
             {
                 MessageBox.Show("Password is not match");
